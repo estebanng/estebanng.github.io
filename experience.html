@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteban Navarro Garaiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script>
+        function resizePdf() {
+        var pdf = document.getElementById('cv-object');
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        if (width < 1000) {
+            pdf.style.width = (width - 30) + 'px';
+            pdf.style.height = ((width - 30) / 0.75) + 'px';
+        } else {
+            pdf.style.width = '1000px';
+            pdf.style.height = '1333px';
+        }
+        }
+    // Call resizePdf() on page load and window resize
+    window.addEventListener('load', resizePdf);
+    window.addEventListener('resize', resizePdf);
+    </script>
+    <header>
+        <div class="header-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="media.html">Media</a></li>
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/estebanng" target="_blank"><i class="social-linkedin"></i></a>
+                <a href="https://twitter.com/estebanng_" target="_blank"><i class="social-twitter"></i></a>
+                <!-- <a href="https://github.com/estebanng" target="_blank"><i class="social-github"></i></a> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="experience">
+            <div class="section-wrapper">
+                <h2>Professional Experience</h2>
+                <div id="cv-container">
+                    <object id="cv-object" data="files/CV_ENG.pdf#view=FitH" type="application/pdf">
+                      <p>You can <a href="files/CV_ENG.pdf" class="link-style-media">click here</a> to download a PDF version of my CV.</p>
+                    </object>
+                  </div>                  
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <p>&copy; Esteban Navarro Garaiz | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -7,15 +7,18 @@
 
 /* Typography */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-family: "Yantramanav", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue";
+    font-weight: 200;
+    font-size: 21px;
     line-height: 1.5;
     color: #555;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 h1, h2, h3 {
-    font-weight: 400;
-    margin: 1.5rem 0;
+    font-weight: 200;
+    margin: 1.25rem 0;
     color: #333;
 }
 
@@ -37,10 +40,11 @@ p {
 
 /* Layout */
 .header-wrapper {
+    font-size: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -68,25 +72,20 @@ nav a:hover {
     color: #0074D9;
 }
 
-.section-wrapper {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
-.section-wrapper h2 {
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
-    margin-bottom: 1.5rem;
-}
-
-ul li:last-child {
-    margin-bottom: 0;
+.footer-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .social-media {
@@ -102,40 +101,171 @@ ul li:last-child {
     width: 40px;
     border-radius: 50%;
     color: #fff;
-    background-color: #0074D9;
+    background-color: transparent;
     transition: all 0.3s ease;
+    /* margin: 0 auto; */
+    margin-right: 1rem;
 }
 
 .social-media a:hover {
-    transform: translateY(-3px);
-    background-color: #005BA8;
+    transform: translateY(-4px);
+    background-color: transparent;
 }
+
+.social-media i.social-linkedin {
+    background-image: url(../images/linkedin.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.social-media i.social-twitter {
+    background-image: url(../images/twitter.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.social-media i.social-github{
+    background-image: url(../images/github.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* Custom styles */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.right-image {
+    /* float: right; */
+    float: none;
+    margin-left: 40px;
+}
+
+.home-text {
+    /* max-width: 60%; */
+    max-width: 100%;
+    /* margin-right: auto; */
+    margin: 0 auto;
+}
+
+.link-style-zelus {
+    color: #71c76f;
+    text-decoration: none;
+}
+
+.link-style-zelus a:visited {
+    color: #71c76f;
+    text-decoration: none;
+  }
+
+  .link-style-nyu {
+    color: #7E0ACB;
+    text-decoration: none;
+}
+
+.link-style-nyu a:visited {
+    color: #7E0ACB;
+    text-decoration: none;
+  }
+
+.link-style-media {
+    /* color: #585858; */
+    color: #F8B400;
+    text-decoration: none;
+}
+
+.link-style-media a:visited {
+    /* color: #585858; */
+    color: #F8B400;
+    text-decoration: none;
+  }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .header-wrapper {
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
     }
-
     .header-logo {
         margin-bottom: 1rem;
     }
-
-    nav {
-        margin-top: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
-        margin-left: 0;
+    .right-image {
+        float: none;
+        margin: 0 auto;
         margin-bottom: 1rem;
     }
+    .home-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .home-text {
+        max-width: 100%;
+        margin: 0 1rem;
+        margin-bottom: 1rem;
+    }
+}
 
-    .section-wrapper {
-        padding: 2rem;
+@media (max-width: 1050px) {
+    .right-image {
+      background-image: url('ENG_mobile.jpg');
+    }
+
+    .desktop-image {
+        display: none;
+      }
+      
+    .mobile-image {
+    display: block;
+    }
+
+  }
+
+@media (min-width: 1051px) {
+    .right-image {
+      background-image: url('ENG_desktop.jpg');
+    }
+
+    .desktop-image {
+        display: block;
+      }
+      
+    .mobile-image {
+    display: none;
+    }
+}
+
+/* Set max-width to 100% to make the PDF responsive */
+/* Set a default width and height */
+#cv-object {
+    max-width: 100%;
+    width: 1000px;
+    height: 1333px;
+    margin-left: 0px;
+}
+
+/* Override the default width and height for smaller screens */
+@media (max-width: 1000px) {
+    #cv-object {
+        width: 100%;
+        height: auto;
+        max-height: 100vw;
+        max-width: 80vw;
     }
 }
